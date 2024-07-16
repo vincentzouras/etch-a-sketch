@@ -4,6 +4,13 @@ btn.addEventListener('click', () => {
     generateGrid();
 })
 
+function getRandomRGB(){
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+
 function generateGrid() {
     while (container.firstChild){
         container.removeChild(container.firstChild)
@@ -19,7 +26,7 @@ function generateGrid() {
             column.appendChild(row);
             row.style.flex = '1'
             row.addEventListener('mouseenter', function() {
-                row.style.backgroundColor = 'black'
+                row.style.backgroundColor = getRandomRGB();
             })
         }
         container.appendChild(column)
