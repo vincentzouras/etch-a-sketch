@@ -25,8 +25,13 @@ function generateGrid() {
             let row = document.createElement('div');
             column.appendChild(row);
             row.style.flex = '1'
+            row.style.opacity = '.1'
+            let currentOpacity = .1;
             row.addEventListener('mouseenter', function() {
                 row.style.backgroundColor = getRandomRGB();
+                row.style.opacity = currentOpacity;
+                currentOpacity += .1;
+
             })
         }
         container.appendChild(column)
